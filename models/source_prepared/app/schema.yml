@@ -1,6 +1,5 @@
 version: 2 
 
 models:
-  - name: scd1_prepared_app_users
-    identifier: "prepared_app_users"
+  - name: prepared_app_users
   

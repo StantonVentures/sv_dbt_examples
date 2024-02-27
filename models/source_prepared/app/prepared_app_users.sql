@@ -11,5 +11,5 @@ SELECT
       WHEN source_users.updated_at > existing.dw_updated_at THEN current_timestamp 
       ELSE existing.dw_updated_at 
      END as dw_updated_at
-FROM {{ source('src_app', 'scd1_users') }} as source_users
+FROM {{ source('src_app', 'users') }} as source_users
   LEFT JOIN existing on source_users.id = existing.user_id

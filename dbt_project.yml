@@ -11,6 +11,8 @@ models:
     
       
 snapshots:
+  target_schema: "alison9_dbt"
+  +invalidate_hard_deletes: true
   sources:
     app:
       - name: snapshot_source_app_users
