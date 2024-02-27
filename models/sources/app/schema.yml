@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: src_app
+    description: "transactional application ELed to data warehouse"
+    tables:
+      - name: scd1_users
+        description: "User accounts of the transactional application."
+        columns:
+          - name: id 
+          - name: first_name 
+          - name: created_at
+          - name: updated_at
