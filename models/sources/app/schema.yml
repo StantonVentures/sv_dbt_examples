@@ -2,9 +2,11 @@ version: 2
 
 sources:
   - name: src_app
+    database: alison9_dbt
+    schema: dbt_astanton
     description: "transactional application ELed to data warehouse"
     tables:
-      - name: scd1_users
+      - name: users
         description: "User accounts of the transactional application."
         columns:
           - name: id 

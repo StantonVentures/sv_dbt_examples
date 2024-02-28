@@ -2,4 +2,5 @@ version: 2
 
 models:
   - name: prepared_app_users
+  - name: prepared_app_users_with_previous
   

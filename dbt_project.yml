@@ -4,23 +4,29 @@ config-version: 2
 profile: 'default'
 
 models:
-  my_new_project:
+  sv_dbt_examples:
+    #+database: alison9_dbt
+    #+schema: dbt_astanton 
     +materialized: table
     source_prepared:
       app:
     
       
 snapshots:
-  target_schema: "alison9_dbt"
+  #+target_database: "alison9_dbt"
+  +target_schema: "dbt_astanton"
   +invalidate_hard_deletes: true
   sources:
     app:
       - name: snapshot_source_app_users
 
 seeds:
+  #+database: alison9_dbt
+  #+schema: dbt_astanton
   sv_dbt_examples:  
     app:
-      prepared_app_users:
+      seed_prepared_app_users:
+        +identifier: "prepared_app_users"
         +column_types:
           user_id: bigint
           first_name: varchar(255)
@@ -28,6 +34,10 @@ seeds:
           src_updated_at: timestamptz
           dw_created_at: timestamptz
           dw_updated_at: timestamptz
+      seed_prepared_app_users_with_previous:
+        +identifier: "prepared_app_users_with_previous"
+      users:
+        +identifier: users
 
 
 
