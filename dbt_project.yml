@@ -5,7 +5,7 @@ profile: 'default'
 
 models:
   sv_dbt_examples:
-    #+database: alison9_dbt
+    #+database: sv_dbt_examples
     #+schema: dbt_astanton 
     +materialized: table
     source_prepared:
@@ -13,7 +13,7 @@ models:
     
       
 snapshots:
-  #+target_database: "alison9_dbt"
+  #+target_database: "sv_dbt_examples"
   +target_schema: "dbt_astanton"
   +invalidate_hard_deletes: true
   sources:
@@ -21,12 +21,11 @@ snapshots:
       - name: snapshot_source_app_users
 
 seeds:
-  #+database: alison9_dbt
+  #+database: sv_dbt_examples
   #+schema: dbt_astanton
   sv_dbt_examples:  
     app:
       seed_prepared_app_users:
-        +identifier: "prepared_app_users"
         +column_types:
           user_id: bigint
           first_name: varchar(255)
@@ -35,9 +34,20 @@ seeds:
           dw_created_at: timestamptz
           dw_updated_at: timestamptz
       seed_prepared_app_users_with_previous:
-        +identifier: "prepared_app_users_with_previous"
+        +column_types:
+          user_id: bigint
+          first_name: varchar(255)
+          src_created_at: timestamptz
+          src_updated_at: timestamptz
+          dw_created_at: timestamptz
+          dw_updated_at: timestamptz
       users:
         +identifier: users
+        +column_types:
+          id: bigint
+          first_name: varchar(255)
+          created_at: timestamptz
+          updated_at: timestamptz 
 
 
 

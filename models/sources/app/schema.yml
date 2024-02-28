@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: src_app
-    database: alison9_dbt
+    database: sv_dbt_examples
     schema: dbt_astanton
     description: "transactional application ELed to data warehouse"
     tables:

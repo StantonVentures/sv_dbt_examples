@@ -3,7 +3,7 @@
     , strategy="timestamp", updated_at="updated_at"
     ) }}
 
-SELECT *, '' as record_status, NULL as deleted_at
+SELECT *
 FROM {{ source('src_app', 'users') }}
 
 {% endsnapshot %}

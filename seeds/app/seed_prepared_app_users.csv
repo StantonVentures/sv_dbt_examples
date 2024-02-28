@@ -1,1 +1,1 @@
-user_id,first_name,src_created_at,src_updated_at,dw_created_at,dw_updated_at
+user_id,first_name,src_created_at,src_updated_at,dw_created_at,dw_updated_at,record_status,deleted_at
