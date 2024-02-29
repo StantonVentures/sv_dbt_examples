@@ -33,6 +33,8 @@ seeds:
           src_updated_at: timestamptz
           dw_created_at: timestamptz
           dw_updated_at: timestamptz
+          dw_record_status: varchar(255) 
+          dw_deleted_at: timestamptz
       seed_prepared_app_users_with_previous:
         +column_types:
           user_id: bigint
@@ -41,6 +43,8 @@ seeds:
           src_updated_at: timestamptz
           dw_created_at: timestamptz
           dw_updated_at: timestamptz
+          dw_record_status: varchar(255)
+          dw_deleted_at: timestamptz
       users:
         +identifier: users
         +column_types:
