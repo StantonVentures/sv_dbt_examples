@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: src_app
+    database: sv_dbt_examples
+    schema: dbt_astanton
+    description: "transactional application ELed to data warehouse"
+    tables:
+      - name: users
+        description: "User accounts of the transactional application."
+        columns:
+          - name: id 
+            tests: [unique, not_null]
+          - name: first_name 
+          - name: created_at
+          - name: updated_at
+          
